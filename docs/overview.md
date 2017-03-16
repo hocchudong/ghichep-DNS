@@ -1,5 +1,5 @@
 # Tìm hiểu về DNS
-[1. tổng quan] (# tq)
+[1. tổng quan](#tq)
 
 ## 1. DNS là gì?
 
