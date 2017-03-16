@@ -1,6 +1,27 @@
 # Tìm hiểu về DNS
 
+# Mục Lục:
 
+[1. DNS là gì?](#dns-la-gi)
+
+[2. Chức năng của DNS.](#chuc-nang)
+
+[3. Nguyên tắc làm việc.](#nguyen-tac-lam-viecc)
+
+[4. Cách sử dụng DNS.](#cach-su-dung)
+
+[5. Kiến trúc DNS.](#kien-truc)
+ <ul>
+  <li>[5.1. Không gian tên miền (Domain name space).](#khong-gian-tien-mien)</li>
+  <li>[5.2. Tên miền (Domain name)](#ten-mien)</li>
+  <li>[5.3. Cú pháp tên miền.](#cu-phap)</li>
+  <li>[5.4. Máy chủ tên miền (Name servers).](#may-chu)</li>
+  <li>[5.5. Cách phân giải địa chỉ DNS.](#cach-phan-giai)</li>
+  <li>[5.6. Cấu trúc gói tin DNS.](#cau-truc-goi-tin)</li>
+ </ul>
+
+
+<a name="dns-la-gi"></a>
 ## 1. DNS là gì?
 
 - DNS (viết tắt trong tiếng Anh của Domain Name System - Hệ thống tên miền) là một hệ thống cho
@@ -20,6 +41,7 @@ tử cho một tên miền Internet. Bằng cách cung cấp cho một thế gi�
 tên miền là một thành phần thiết yếu cho các chức năng của Internet. Các định dạng khác như các thẻ RFID, mã số UPC, kí tự Quốc tế trong 
 địa chỉ email và tên máy chủ, và một loạt các định dạng khác có thể có khả năng sử dụng DNS.
 
+<a name="chuc-nang"></a>
 ## 2. Chức năng của DNS.
 
 - Mỗi website có một tên (là tên miền hay đường dẫn URL: Uniform Resource Locator) và một địa chỉ IP. Địa chỉ IP gồm 4 nhóm số cách nhau bằng dấu chấm(IPv4). 
@@ -27,6 +49,7 @@ Khi mở một trình duyệt Web và nhập tên website, trình duyệt sẽ �
 thành địa chỉ IP để cho trình duyệt hiểu và truy cập được vào website là công việc của một DNS server. Các DNS trợ giúp qua lại với nhau để dịch địa chỉ "IP" thành "tên" và ngược 
 lại. Người sử dụng chỉ cần nhớ "tên", không cần phải nhớ địa chỉ IP (địa chỉ IP là những con số rất khó nhớ)
 
+<a name="nguyen-tac-lam-viecc"></a>
 ## 3. Nguyên tắc làm việc của DNS.
 
 ![dns-diagram](iimages/dns-diagram.png)
@@ -42,14 +65,17 @@ trong miền về các địa chỉ Internet, cả bên trong lẫn bên ngoài 
 
 - DNS server có khả năng ghi nhớ lại những tên vừa phân giải. Để dùng cho những yêu cầu phân giải lần sau. Số lượng những tên phân giải được lưu lại tùy thuộc vào quy mô của từng DNS.
 
+<a name="cach-su-dung"></a>
 ## 4. Cách sử dụng DNS.
 
 - Do các DNS có tốc độ biên dịch khác nhau, có thể nhanh hoặc có thể chậm, do đó người sử dụng có thể chọn DNS server để sử dụng cho riêng mình. Có các cách chọn lựa cho người sử dụng. Sử dụng DNS mặc 
 định của nhà cung cấp dịch vụ (Internet), trường hợp này người sử dụng không cần điền địa chỉ DNS vào network connections trong máy của mình. Sử dụng DNS server khác (miễn phí hoặc trả phí) thì phải điền địa 
 chỉ DNS server vào network connections. Địa chỉ DNS server cũng là 4 nhóm số cách nhau bởi các dấu chấm.
 
+<a name="kien-truc"></a>
 ## 5. Kiến trúc DNS.
 
+<a name="khong-gian-tien-mien"></a>
 ### 5.1. Không gian tên miền (Domain name space).
 
 ![domain-name-space](/images/domain-name-space.png)
@@ -57,20 +83,24 @@ chỉ DNS server vào network connections. Địa chỉ DNS server cũng là 4 n
 - Không gian tên miền là một kiến trúc dạng cây (hình), có chứa nhiều nốt (node). Mỗi nốt trên cây sẽ có một nhãn và có không hoặc nhiều resource record (RR), chúng giữ thông tin liên quan tới tên miền. Nốt 
 root không có nhãn.
 
+<a name="ten-mien"></a>
 ### 5.2. Tên miền (Domain name)
 
 - Tên miền được tạo thành từ các nhãn và phân cách nhau bằng dấu chấm (.), ví dụ example.com. Tên miền còn được chia theo cấp độ như tên miền top level, tên miền cấp 1, cấp 2...
 
+<a name="cu-phap"></a>
 ### 5.3. Cú pháp tên miền.
 
 - Hệ thống tên miền tính theo hướng từ phải sang trái. Ví dụ www.examplle.com thì nhãn example là một tên miền con của tên miền com, và www là tên miền con của tên miền example.com. Cây 
 cấu trúc này có thể có tới 127 cấp.
 
+<a name="may-chu"></a>
 ### 5.4. Máy chủ tên miền (Name servers).
 
 - Máy chủ tên miền chứa thông tin lưu trữ của Không gian tên miền. Hệ thống tên miền được vận hành bởi hệ thống dữ liệu phân tán, dạng client-server. Các nốt của hệ dữ liệu này là các máy chủ tên miền. Mỗi một tên 
 miền sẽ có ít nhất một máy chủ DNS chứa thông tin của tên miền đó. Các thông tin của Máy chủ tên miền sẽ được lưu trữ trong các zone. Có hai dạng NS là là primary và secondary.
 
+<a name="phan-giai"></a>
 ### 5.5. Cách phân giải địa chỉ DNS.
 
 ![dns-resolve](/images/resolve.png)
@@ -86,7 +116,8 @@ miền sẽ có ít nhất một máy chủ DNS chứa thông tin của tên mi�
 
 ![dns-request](/images/dns-request.jpg)
 
-### 5.5. Cấu trúc gói tin DNS.
+<a name="cau-truc-goi-tin"></a>
+### 5.6. Cấu trúc gói tin DNS.
 
 - ID: Là một trường 16 bits, chứa mã nhận dạng, nó được tạo ra bởi một chương trình để thay cho truy vấn. Gói tin hồi đáp sẽ dựa vào mã nhận dạng này để hồi đáp lại. Chính vì vậy mà truy vấn và hồi đáp có thể phù hợp với nhau.
 - QR: Là một trường 1 bit. Bít này sẽ được thiết lập là 0 nếu là gói tin truy vấn, được thiết lập là một nếu là gói tin hồi đáp.
@@ -110,7 +141,7 @@ miền sẽ có ít nhất một máy chủ DNS chứa thông tin của tên mi�
 - ARcount: Chỉ ra số lượng tài nguyên ghi lại trong phần thêm vào của gói tin.
 
 
-#Tham Khảo :
+# Tham Khảo :
 
 - https://vi.wikipedia.org/wiki/DNS#T.E1.BB.95ng_quan
 - http://www.hwmn.org/w/Talk:DNS_Infrastructure
