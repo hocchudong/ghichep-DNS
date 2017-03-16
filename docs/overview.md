@@ -52,7 +52,7 @@ lại. Người sử dụng chỉ cần nhớ "tên", không cần phải nhớ 
 <a name="nguyen-tac-lam-viecc"></a>
 ## 3. Nguyên tắc làm việc của DNS.
 
-![dns-diagram](iimages/dns-diagram.png)
+![dns-diagram](images/dns-diagram.png)
 
 - Mỗi nhà cung cấp dịch vụ vận hành và duy trì DNS server riêng của mình, gồm các máy bên trong phần riêng của mỗi nhà cung cấp dịch vụ đó trong Internet. Tức là, nếu một trình duyệt 
 tìm kiếm địa chỉ của một website thì DNS server phân giải tên website này phải là DNS server của chính tổ chức quản lý website đó chứ không phải là của một tổ chức (nhà cung cấp dịch vụ) nào khác.
