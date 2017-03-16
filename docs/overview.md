@@ -1,5 +1,5 @@
 # Tìm hiểu về DNS
-
+[1. tổng quan] (# tq)
 
 ## 1. DNS là gì?
 
@@ -19,7 +19,7 @@ DNS, chịu đựng lỗi, và giúp tránh sự cần thiết cho một trung t
 tử cho một tên miền Internet. Bằng cách cung cấp cho một thế giới rộng lớn, phân phối từ khóa – cơ sở của dịch vụ đổi hướng, Hệ thống 
 tên miền là một thành phần thiết yếu cho các chức năng của Internet. Các định dạng khác như các thẻ RFID, mã số UPC, kí tự Quốc tế trong 
 địa chỉ email và tên máy chủ, và một loạt các định dạng khác có thể có khả năng sử dụng DNS.
-
+<a name="tq"></a>
 ## 2. Chức năng của DNS.
 
 - Mỗi website có một tên (là tên miền hay đường dẫn URL: Uniform Resource Locator) và một địa chỉ IP. Địa chỉ IP gồm 4 nhóm số cách nhau bằng dấu chấm(IPv4). 
