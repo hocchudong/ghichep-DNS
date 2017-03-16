@@ -13,12 +13,12 @@
 [4. Cách sử dụng DNS.](#cach-su-dung)
 
 [5. Kiến trúc DNS.](#kien-truc)</br>
-  [5.1. Không gian tên miền (Domain name space).](#khong-gian-tien-mien)
-  [5.2. Tên miền (Domain name)](#ten-mien)
-  [5.3. Cú pháp tên miền.](#cu-phap)
-  [5.4. Máy chủ tên miền (Name servers).](#may-chu)
-  [5.5. Cách phân giải địa chỉ DNS.](#cach-phan-giai)
-  [5.6. Cấu trúc gói tin DNS.](#cau-truc-goi-tin)
+  [5.1. Không gian tên miền (Domain name space).](#khong-gian-tien-mien)</br>
+  [5.2. Tên miền (Domain name)](#ten-mien)</br>
+  [5.3. Cú pháp tên miền.](#cu-phap)</br>
+  [5.4. Máy chủ tên miền (Name servers).](#may-chu)</br>
+  [5.5. Cách phân giải địa chỉ DNS.](#cach-phan-giai)</br>
+  [5.6. Cấu trúc gói tin DNS.](#cau-truc-goi-tin)</br>
 
 
 <a name="dns-la-gi"></a>
