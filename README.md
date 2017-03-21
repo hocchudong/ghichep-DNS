@@ -1,1 +1,1 @@
-# Các ghi chép về DNS
+# Các ghi chép về DNS.
