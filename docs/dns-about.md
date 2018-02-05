@@ -92,7 +92,7 @@ ____
 
     khi ta filter DNS packet, ta sẽ nhận chung được các gói tin có cấu trúc như sau:
 
-        ![dns-req-res-mesg.png](../images/dns-req-res-mesg.png)
+    ![dns-req-res-mesg.png](../images/dns-req-res-mesg.png)
 ____
 
 # <a name="content-others">Các nội dung khác</a>
