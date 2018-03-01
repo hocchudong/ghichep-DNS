@@ -11,7 +11,7 @@ ____
     - [2.2.2 Tạo các zone files](#zonefiles)
     - [2.2.3 Khởi động DNS Service](#start)
     - [2.2.4 Kiểm tra kết quả cấu hình DNS](#check)
-- [](#)
+- [2.3 Xác định máy chủ thực hiện phân giải tên miền](#dig)
 - [Các nội dung khác](#content-others)
 
 ____
@@ -216,9 +216,45 @@ ____
 
             > ![dns-check-web.png](../images/dns-check-web.png)
                 
-- ### <a name=""></a>
+- ### <a name="dig">2.3 Xác định máy chủ thực hiện phân giải tên miền</a>
+    - Để thực hiện xác định máy chủ thực hiện phân giải tên miền, ta có thể sử dụng câu lệnh sau:
 
+            dig domain
 
+        trong đó `domain` là một tên miền. Ví dụ:
+
+            dig client.ministry.local
+
+        kết quả nhận được như sau:
+
+            ; <<>> DiG 9.9.4-RedHat-9.9.4-51.el7_4.2 <<>> client.ministry.local
+            ;; global options: +cmd
+            ;; Got answer:
+            ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 41466
+            ;; flags: qr aa rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 3
+
+            ;; OPT PSEUDOSECTION:
+            ; EDNS: version: 0, flags:; udp: 4096
+            ;; QUESTION SECTION:
+            ;client.ministry.local.         IN      A
+
+            ;; ANSWER SECTION:
+            client.ministry.local.  86400   IN      A       10.10.10.20
+
+            ;; AUTHORITY SECTION:
+            ministry.local.         86400   IN      NS      masterdns.ministry.local.
+            ministry.local.         86400   IN      NS      slavedns.ministry.local.
+
+            ;; ADDITIONAL SECTION:
+            masterdns.ministry.local. 86400 IN      A       10.10.10.72
+            slavedns.ministry.local. 86400  IN      A       10.10.10.73
+
+            ;; Query time: 1 msec
+            ;; SERVER: 10.10.10.72#53(10.10.10.72)
+            ;; WHEN: Thu Mar 01 09:12:14 EST 2018
+            ;; MSG SIZE  rcvd: 145
+
+        với kết quả trên, ta có thể thấy được DNS nào thực hiện phân giải tên miền trong phần `;; ADDITIONAL SECTION:`
 ____
 
 # <a name="content-others">Các nội dung khác</a>
